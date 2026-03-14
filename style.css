@@ -1,0 +1,6 @@
+<?php
+require_once __DIR__.'/includes/config.php';
+logAction('LOGOUT','User '.($_SESSION['admin_user']['username']??'unknown').' logged out');
+session_destroy();
+header('Location: '.APP_BASE.'/index.php');
+exit;
